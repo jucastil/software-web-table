@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Request Software Form</title>
+    <style>
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(
+                to bottom right,
+                #5dade2,
+                #7fb3d5,
+                #a2a3c3,
+                #c67d8f,
+                #f4d03f
+            );
+            color: white;
+            font-size: 19px;
+        }
+
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header img {
+            width: 90px;
+            height: 90px;
+            margin: 20px 20px 30px 0;  /* top right bottom left */
+        }
+
+        h1 {        
+            letter-spacing: 1.5px;
+            color:#062930;
+            text-shadow: 0 10px 40px rgba(0,0,0,.9);         
+        }
+        
+        h2 {
+            text-align: center;
+            text-shadow: 0 10px 20px rgba(0,0,0,.4);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label, input, textarea {
+            height: 20px;
+            margin: 0px 20px 20px 20px; 
+            display: flex;
+            justify-content: flex-start;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        input, textarea{
+            padding: 8px;
+            border: none;  
+            font-size: 20px;
+        }
+
+        textarea {
+            height: 100px;
+            font-weight: 500;
+        }
+
+        input::placeholder {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+        /* radio-button effect*/
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            width: 20px;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            background-color: transparent;
+        }
+
+        input[type="radio"]:checked::before {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 12px;
+            background-color: #ca8489bb;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            height: 40px;
+            cursor: pointer;
+            border: none;
+            background: rgba(184, 22, 22, 0.322);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            transition: all 0.3s ease; 
+        }
+
+        button:hover {
+            background: rgba(184, 22, 22, 0.6);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.0); 
+            transform: translateY(-0.8px); 
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 800px;
+            margin: 0 auto;
+        }    
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="../img/athena-transparent.png" alt="">
+        <h1>Scientific Computing Software</h1>
+    </header>
+
+            <div class="container">
+                <h2>Request Software</h2>
+                <form id="issue-form" action="request.php" method="post">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="example:jucastil" required></textarea>
+
+                    <label for="groupe">Groupe</label>
+                    <input type="text" id="group" name="group"  placeholder="example:structural biology" required></textarea>
+
+                    <label>Software Group</label>
+                    <div class="sw-group">
+                        <label><input class="with-gap" type="radio" name="sw-groupe" value="spa"> SPA</label>
+                        <label><input class="with-gap" type="radio" name="sw-groupe" value="tomo"> TOMO</label>
+                        <label><input class="with-gap" type="radio" name="sw-groupe" value="micro"> MICRO</label>
+                        <label><input class="with-gap" type="radio" name="sw-groupe" value="micro"> I don't know</label>
+                    </div>
+                    
+                    <label for="sw">Name of the Software</label>
+                    <input type="text" id="sw" name="sw"  placeholder="example: RELION 5 devel" required></textarea> 
+                    
+                    <label for="web-address">Web Address</label>
+                    <input type="text" id="web-address" name="web-address"  placeholder="example: www.myprogram.com" required></textarea>
+                    
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email"  placeholder="example: jucastil@biophys.mpg.de"required>
+                    
+                    <label for="describe-issues">Reason for the request</label>
+                    <textarea id="describe-issues" name="describe-issues" rows="6" required></textarea>
+            
+            <div class="button-row">
+                <button type="submit" value="Submit">Submit</button>
+                <button type="reset">Reset</button>
+                <button type="button" onclick="history.back()">Back</button>
+            </div>
+        </form>
+    </div>
+
+
+
+<!--
+<script>
+    document.getElementById('issue-form').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+  
+      emailjs.sendForm('', '', this) // service ID, template ID
+        .then(function() {
+          alert('The issue has been sent successfully!');
+        }, function(error) {
+          alert('An Error has occurred: ' + JSON.stringify(error));
+        });
+    });
+  </script>
+-->
+</body>
+</html>

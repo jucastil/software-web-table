@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <script>
+        const cssLink = document.createElement("link");
+        cssLink.rel = "stylesheet";
+        cssLink.href = "style.css?v=" + new Date().getTime(); // apply the newest css
+        document.head.appendChild(cssLink);
+    </script>
+
+    <script src="./js/jspdf.umd.min.js"></script>
+    <script src="./js/jspdf.plugin.autotable.min.js"></script>
+
+    <title>Scientific Software</title>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <a href="index.html">
+            <img src="./img/athena-blue.jpg" alt="Home" title="Home">
+        </a>
+        <a href="index.html">
+            <h1>Scientific Computing Software</h1>
+        </a>
+    </header>
+
+    <div class="container_and_buttons">
+        <div class="container">     
+            <div class="info">
+                <h2>* Click on the Source button to get additional info.</br>The left button to select by usage.</h2>
+                <p class="date">Last update: <span id="last-update"></span></p>
+                <script>
+                    document.getElementById('last-update').textContent = new Date().toLocaleString();
+                </script>
+            </div>        
+    
+            <table id="data-table" id="data-table" data-sort-order="asc"> 
+                <h1>&nbsp;LM</h1>
+                <thead>  
+                    <tr> <th  onclick="sortTable(0)" style="width: 15%">Name</th> <th onclick="sortTable(1)" style="width: 50%">Description</th> <th onclick="sortTable(2)" style="width: 15%">Platform</th> <th onclick="sortTable(3)" style="width: 20%;">Source</th> </tr> </thead>
+                    <tbody>
+                        <tr><td>Alphafold2</td><td>implementation of AlphaFold-Multimer</td><td>CentOS 7</td><td><a href="https://github.com/google-deepmind/alphafold">alphafold2</a></td></tr>
+                        <tr><td>CCP4 v9.0.005</td><td>Macromolecular crystallography</td> <td>openSUSE</td> <td><a href="#">CCP4 documentation</a></td> </tr>
+                        <tr><td>Chimera 1.18</td><td>Macromolecule model building, fitting, and visualization</td><td>openSUSE</td><td><a href="https://www.cgl.ucsf.edu/chimera/docindex.html">Chimera</a></td></tr>
+                        <tr><td>Cryosparc</td><td>Complete solution for cryo-EM data processing</td><td>openSUSE</td><td><a href="https://cryosparc.com/">Cryosparc</a></td></tr>
+                        <tr><td>ChimeraX 1.9</td><td>Sucessor of Chimera</td><td>openSUSE</td><td><a href="https://www.cgl.ucsf.edu/chimerax/docs/user/index.html">ChimeraX</a></td></tr>
+                        <tr> <td>Conda 24.11.2</td> <td>mamba module</td><td>openSUSE</td><td><a href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">Getting started with Conda</a></td>
+                        <tr><td>Coot 0.9.8.95</td><td>macromolecule model building and fitting</td><td>openSUSE</td><td><a href="https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/">COOT home</a></td></tr>
+                        <tr><td>crYOLO</td><td>cryo-EM particle picking</td><td>openSUSE</td><td><a href="https://cryolo.readthedocs.io/en/stable/">cryOLO</a></td></tr>
+                        <tr><td>EMAN2 conda</td><td>cryo-EM image processing and high-resolution 3D volume reconstruction</td><td>openSUSE</td><td><a href="https://blake.bcm.edu/emanwiki/EMAN2/Install/CondaInstall">EMAN2</a></td></tr>
+                        <tr><td>Gctf 1.06</td><td>real-time CTF correction</td><td>openSUSE</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4711343/">Gctf reference</a></td></tr>
+                        <tr><td>Imod 5.10</td><td>processing, modeling and display programs used for tomographic reconstruction and for 3D reconstruction</td><td>openSUSE</td><td><a href="https://bio3d.colorado.edu/imod/">IMOD home</a></td></tr>
+                        <tr><td>motioncorr2</td><td>Correction of electron beam-induced sample motion</td><td>openSUSE</td><td><a href="https://emcore.ucsf.edu/ucsf-software">motioncore2</a></td></tr>
+                        <tr><td>Phenix 1.21</td><td>Python modules and command-line utilities for EM of biological samples</td><td>openSUSE</td><td><a href="https://phenix-online.org/documentation/install-setup-run.html">Phenix home</a></td></tr>
+                        <tr><td>pip 24.3.1</td><td>mamba module</td><td>openSUSE</td><td><a href="https://pip.pypa.io/en/stable/getting-started/">Pip howto</a></td></tr>
+                        <tr><td>pyem</td><td>Python modules and command-line utilities for EM of biological samples</td><td>openSUSE</td><td><a href="https://github.com/asarnow/pyem">pyem</a></td></tr>
+                        <tr><td>python 3.12</td><td>mamba module</td><td>openSUSE</td><td><a href="https://scipy-lectures.org/intro/">Python intro</a></td></tr>        
+                        <tr><td>Relion 5</td><td>REgularised LIkelihood OptimisatioN</td><td>openSUSE</td><td><a href="https://relion.readthedocs.io/en/latest/Whats-new.html">Relion Home</a></td></tr>
+                        <tr><td>WARP/M</td><td>Frame alignment, defocus estimation, particle picking and tomographic reconstruction</td><td>Windows</td><td><a href="https://warpem.github.io/warp/home/warp/">warp home</a></td></tr>
+                    </tbody>
+            </table>
+
+            <div class="pagination" id="pagination"></div>
+        </div>
+
+        <div class="buttons">                
+            <button>Request</button>
+            <button onClick="window.location ='report/report_issue.html' ">Report</button>
+            <button onClick="window.location ='report/report_issue.html' ">Admin</button>
+            <hr>
+            <button onclick="togglePagination()" id="togglePagination" >Show All</button>
+            <button onclick="printPDF()">Print PDF</button>
+            <button onclick="printCSV()">Print CSV</button>
+            <hr>
+            <button class="sw_button" onClick="window.location ='spa.html' " >SPA</button>
+            <button class="sw_button" onClick="window.location ='tomo.html' ">TOMO</button>
+            <button class="sw_button active" onClick="window.location ='lm.html'" >LM</button>
+        </div>
+    </div>
+
+    <footer>
+        <hr>        
+            <p>© 2024 by SBU</p>
+        </div>        
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/printPDF.js"></script>
+    <script src="./js/printCSV.js"></script>
+</body>
+</html>

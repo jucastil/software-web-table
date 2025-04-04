@@ -1,0 +1,212 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+  }
+body {
+    color: rgb(75, 75, 75);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    overflow-y: auto;
+}
+
+header{
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+    transform: translateX(-70px);    
+    gap: 15px;
+}
+header:hover {
+    scale: 102%;
+    transition: all 0.3s ease;
+}
+header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+h1 {
+    margin: 10px;
+    letter-spacing: 2px;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    transform: translateX(-100px);    
+    color: rgb(75, 75, 75);    
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;    
+    overflow: hidden;
+    background-color: rgba(221, 221, 221, 0.514);    
+}
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(136, 136, 136, 0.3);
+    text-align: left;    
+    overflow-wrap: break-word;
+}
+th { /* table-top */    
+    position: sticky;
+    background: rgba(29, 29, 29, 0.2);
+    cursor: pointer;
+}
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    height: 20px;    
+}
+th:hover {
+    background: rgba(148, 148, 148, 0.3);
+}
+tr:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+hr {
+    margin: 7px 0;    
+}
+a {
+    color: rgb(75, 75, 75);
+    font-weight: 800;
+}
+
+.container_and_buttons {
+    top: 50%;
+    left: 50%;
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    justify-content: center;
+    gap: 0px;
+    width: 70%;
+    min-width: 700px;
+    margin: 0 auto;
+}
+.container {
+    display: relative;
+    justify-content: center;
+    align-items: center; /* Align items to the top */
+    width: 100%;   
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);    
+    z-index: 1;
+}
+.container table {
+    flex-grow: 1;
+    width: 100%;
+    border-collapse: collapse;
+}
+.container table thead {
+    font-size: 18px;
+    color: rgb(32, 32, 32);
+}
+.container table tbody {
+    display: block;
+    overflow-y: auto; 
+    max-height: 1000px; 
+}
+.container table tr {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: table;
+    width: 100%;
+    table-layout: fixed; /* column layout fixed */
+}
+
+.buttons {
+    position: relative; 
+    margin: 120px 10px 0px 0px; 
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;     
+}
+.buttons button {
+    padding: 10px 20px;
+    height: 40px;
+    width: 130px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    color: black;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.8); 
+}
+.buttons button:nth-child(1){
+    background: rgba(221, 122, 1, 0.336);
+}
+.buttons button:nth-child(2){
+    background: rgba(182, 1, 1, 0.356);
+}
+.buttons button:nth-child(4), button:nth-child(5), button:nth-child(6) {
+    background: rgba(12, 156, 89, 0.356);
+}
+.buttons button:hover {
+    opacity: 0.7;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.10); 
+    transform: translateY(-0.8px);     
+}
+.buttons button:active {
+    background: linear-gradient(135deg, #003d80, #002752); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transform: translateY(0); 
+}
+.buttons hr {
+    width: 130px;
+}
+
+/* scrollbar */
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(126, 35, 35, 0.3);
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: rgb(179, 179, 179);	
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 150px;
+    margin: 0 0 0 0;
+    background-color: #33333353;
+    backdrop-filter: blur(30px);
+    border-top: 1px solid rgba(255, 255, 255, 0.381);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;   
+}
+

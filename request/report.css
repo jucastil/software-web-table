@@ -1,0 +1,178 @@
+body {
+            font-family: Tahoma, Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            /* background: linear-gradient(135deg, #1e3c72, #2a5298); */
+            background-image: linear-gradient(
+                to bottom right,
+                #5dade2,
+                #7fb3d5,
+                #a2a3c3,
+                #c67d8f,
+                #f4d03f
+            );
+            color: white;
+            font-size: 19px;
+        }
+
+        header{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 30px 0 80px 0;
+        }
+
+        header img {
+            width: 100px;
+            height: 100px;
+
+        }
+
+        header h1 {
+            /* font-family: "Trebuchet MS", sans-serif;
+            font-size: 3em;
+            letter-spacing: -2px;
+            border-bottom: 2px dashed black;
+            text-transform: uppercase; */
+            
+            margin-left: 20px;
+            letter-spacing: 1.5px;
+            font-size: 2.5em;
+            color:#062930;
+            text-shadow: 0 20px 40px rgba(0,0,0,.5);
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 50px;
+            width: 100%;
+            text-align: center;
+            text-shadow: 0 10px 20px rgba(0,0,0,.6);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label, input, textarea, select {
+            height: 20px;
+            margin: 20px 20px 0 20px;
+            display: flex;
+            justify-content: flex-start;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        input, textarea, select{
+            padding: 8px;
+            border: none;  
+            font-size: 20px;
+        }
+
+        textarea {
+            height: 100px;
+            font-weight: 500;
+        }
+
+        .sw-groupe input {
+            padding: 0;
+            margin: -3px 10px 0 0;
+        }
+
+        /* radio-button effect*/
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            background-color: transparent;
+            position: relative;
+            top: 6px;
+        }
+
+        input[type="radio"]:checked::before {
+            content: "";
+
+            display: block;
+            width: 12px;
+            height: 12px;
+            background-color: #ca8489;
+            border-radius: 50%;
+            position: absolute;
+            top: 48%;
+            left: 49%;
+            transform: translate(-48%, -49%);
+            animation: appear 0.3s;
+        }
+
+        /* drop-down menu options
+        select {
+            height: 100px;
+        } */
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            height: 40px;
+            cursor: pointer;
+            border: none;
+            background: rgba(184, 22, 22, 0.322);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            transition: all 0.3s ease; 
+        }
+
+        button:hover {
+            background: rgba(184, 22, 22, 0.6);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.0); 
+            transform: translateY(-0.8px); 
+        }
+
+        @keyframes appear {
+        0% {
+            transform: translate(-50%, -50%) scale(0);
+            background-color: #fff;
+        }
+        45% {
+            transform: translate(-50%, -50%) scale(1.6);
+            background-color: #64aedf;
+        }
+        50% {
+            transform: translate(-50%, -50%) scale(1.7);
+            background-color: #ad97b3;
+        }
+        55% {
+            transform: translate(-50%, -50%) scale(1.6);
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+            background-color: #ca8489;
+        }
+    }

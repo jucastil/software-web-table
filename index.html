@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script>
+        const cssLink = document.createElement("link");
+        cssLink.rel = "stylesheet";
+        cssLink.href = "style.css?v=" + new Date().getTime(); // apply the newest css
+        document.head.appendChild(cssLink);
+    </script>
+    <script src="./js/jspdf.umd.min.js"></script>
+    <script src="./js/jspdf.plugin.autotable.min.js"></script>
+    <title>Scientific Software</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <a href="index.html">
+            <img src="./img/athena-blue.jpg" alt="Home" title="Home">
+        </a>
+        <a href="index.html">
+            <h1>Scientific Computing Software</h1>
+        </a>
+    </header>
+    <div class="container_and_buttons">
+        <div class="container">     
+            <div class="info">
+                <h2>* Click on the Source button to get additional info.</br>The left button to select by usage.</h2>
+                <p class="date">Last update: <span id="last-update"></span></p>
+                <script>
+                    document.getElementById('last-update').textContent = new Date().toLocaleString();
+                </script>
+            </div>
+            <table class="data-table" id="data-table" data-sort-order="asc"> 
+                <thead>  
+                    <tr> <th  onclick="sortTable(0)" style="width: 15%">Name</th> <th onclick="sortTable(1)" style="width: 45%">Description</th> <th onclick="sortTable(2)" style="width: 15%">Platform</th> <th onclick="sortTable(3)" style="width: 10%;">Source</th> </tr> 
+                </thead>
+                <tbody>
+                    <tr><td>Aspera</td><td>high-speed, secure data transfers from the command line</td><td>CentOS 7</td><td><a href="https://download.asperasoft.com/download/docs/cli/3.9.6/user_linux/webhelp/index.html">Aspera</a></td></tr>
+                    <tr><td>Alphafold2</td><td>implementation of AlphaFold-Multimer</td><td>CentOS 7</td><td><a href="https://github.com/google-deepmind/alphafold">alphafold2</a></td></tr>
+                    <tr><td>Aretomo2</td><td>multi-GPU accelerated software package that fully automates motion-corrected marker-free tomographic alignment and reconstruction</td><td>CentOS 7</td><td><a href="https://github.com/czimaginginstitute/AreTomo2">AreTomo2</a></td></tr>
+                    <tr><td>Aretomo3</td><td>multi-GPU accelerated software package that fully automates motion-corrected marker-free tomographic alignment and reconstruction</td><td>CentOS 7</td><td><a href="https://github.com/czimaginginstitute/AreTomo3">AreTomo3</a></td></tr>
+                    <tr><td>BioPython 1.85</td><td>python tools for biological computation</td><td>CentOS 7</td><td><a href="https://biopython.org/">BioPython</a></td></tr>
+                    <tr><td>Bokeh</td><td>Python library for creating interactive visualizations</td><td>CentOS 7</td><td><a href="https://docs.bokeh.org/en/latest/">Bokeh</a></td></tr>
+                    <tr><td>Bowtie2</td><td>aligning sequencing reads to long reference sequences</td><td>CentOS 7</td><td><a href="https://github.com/BenLangmead/bowtie2">bowtie2</a></td></tr>
+                    <tr><td>CCP4 v9.0.005</td><td>Macromolecular crystallography</td> <td>openSUSE</td> <td><a href="#">CCP4 documentation</a></td> </tr>
+                    <tr><td>Chimera 1.18</td><td>Macromolecule model building, fitting, and visualization</td><td>openSUSE</td><td><a href="https://www.cgl.ucsf.edu/chimera/docindex.html">Chimera</a></td></tr>
+                    <tr><td>Cryosparc</td><td>Complete solution for cryo-EM data processing</td><td>openSUSE</td><td><a href="https://cryosparc.com/">Cryosparc</a></td></tr>
+                    <tr><td>ChimeraX 1.9</td><td>Sucessor of Chimera</td><td>openSUSE</td><td><a href="https://www.cgl.ucsf.edu/chimerax/docs/user/index.html">ChimeraX</a></td></tr>
+                    <tr><td>cisTEM</td><td>Computational Imaging System for Transmission Electron Microscopy</td><td>CentOS 7</td><td><a href="https://cistem.org/">cistem.org</a></td></tr>
+                    <tr><td>Conda 24.11.2</td> <td>mamba module</td><td>openSUSE</td><td><a href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html">Getting started with Conda</a></td>
+                    <tr><td>Coot 0.9.8.95</td><td>macromolecule model building and fitting</td><td>openSUSE</td><td><a href="https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/">COOT home</a></td></tr>
+                    <tr><td>cryoCARE</td><td>Content-Aware Image Restoration for Cryo-Transmission Electron Microscopy Data</td><td>CentOS 7</td><td><a href="https://github.com/juglab/cryoCARE_T2T">cryoCARE_T2T</a></td></tr>
+                    <tr><td>cryoCAT</td><td>Contextual Analysis Tools for cryoET and subtomogram averaging</td><td>CentOS 7</td><td><a href="https://github.com/turonova/cryoCAT">cryoCAT</a></td></tr>
+                    <tr><td>crYOLO</td><td>cryo-EM particle picking</td><td>openSUSE</td><td><a href="https://cryolo.readthedocs.io/en/stable/">cryOLO</a></td></tr>
+                    <tr><td>ctffind</td><td>defocus estimation from electron micrographs</td><td>CentOS 7</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6760662/">ctffind</a></td></tr>
+                    <tr><td>ctffind5</td><td>improved insight into quality, tilt and thickness of TEM samples</td><td>CentOS 7</td><td><a href="https://grigoriefflab.umassmed.edu/ctffind5_provides_improved_insight_quality_tilt_and_thickness_tem_samples">ctffind5</a></td></tr>
+                    <tr><td>deepEMhancer</td><td>Deep cryo-EM Map Enhancer</td><td>CentOS 7</td><td><a href="https://github.com/rsanchezgarc/deepEMhancer">deepEMhancer</a></td></tr>
+                    <tr><td>DeepFinder</td><td>deep learning approach to localize macromolecules in cryo electron tomography</td><td>CentOS 7</td><td><a href="https://deepfinder.readthedocs.io/en/latest/intro.html">deepfinder</a></td></tr>
+                    <tr><td>dynamo</td><td>subtomogram averaging of cryo-EM data</td><td>CentOS 7</td><td><a href="https://www.dynamo-em.org/w/index.php?title=Main_Page">Dynamo</a></td></tr>
+                    <tr><td>dynamo2m</td><td>interface between Dynamo and the Warp-RELION-M pipeline</td><td>CentOS 7</td><td><a href="https://github.com/alisterburt/dynamo2m">dynamo2m</a></td></tr>
+                    <tr><td>EMAN2 conda</td><td>cryo-EM image processing and high-resolution 3D volume reconstruction</td><td>openSUSE</td><td><a href="https://blake.bcm.edu/emanwiki/EMAN2/Install/CondaInstall">EMAN2</a></td></tr>
+                    <tr><td>gapstop_tm</td><td>efficient template matching</td><td>CentOS 7</td><td><a href="https://gitlab.mpcdf.mpg.de/bturo/gapstop_tm/-/tree/main">gapstop_tm</a></td></tr>
+                    <tr><td>Gctf 1.06</td><td>real-time CTF correction</td><td>openSUSE</td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4711343/">Gctf reference</a></td></tr>
+                    <tr><td>HH-suite</td><td>protein sequence searching based on the pairwise alignment of hidden Markov models</td><td>CentOS 7</td><td><a href="https://github.com/soedinglab/hh-suite">hh-suite</a></td></tr>
+                    <tr><td>HMMER</td><td>biosequence analysis using profile hidden Markov models</td><td>CentOS 7</td><td><a href="http://hmmer.org/">HHMER</a></td></tr>
+                    <tr><td>ilastik</td><td>interactive learning and segmentation toolkit</td><td>CentOS 7</td><td><a href="https://www.ilastik.org/">ilastik</a></td></tr>
+                    <tr><td>Imod 5.10</td><td>processing, modeling and display programs used for tomographic reconstruction and for 3D reconstruction</td><td>openSUSE</td><td><a href="https://bio3d.colorado.edu/imod/">IMOD home</a></td></tr>
+                    <tr><td>IPython</td><td>Python interactively</td><td>CentOS 7</td><td><a href="https://pypi.org/project/ipython/">ipython</a></td></tr>
+                    <tr><td>IsoNet</td><td>deep-learning-based algorithm that tries to restore the missing wedge in cryo-ET tomograms</td><td>CentOS 7</td><td><a href="https://cosmic-cryoem.org/tools/isonet/">sonet</a></td></tr>
+                    <tr><td>Kalign</td><td>fast multiple sequence alignment program</td><td>CentOS 7</td><td><a href="https://github.com/TimoLassmann/kalign/releases">kalign</a></td></tr>
+                    <tr><td>lil-aretomo</td><td>lightweight Python API for AreTomo</td><td>CentOS 7</td><td><a href="https://github.com/teamtomo/lil-aretomo">Lil-aretomo</a></td></tr>
+                    <tr><td>LMfit</td><td>tools for non-linear least-squares minimization and curve fitting</td><td>CentOS 7</td><td><a href="https://github.com/lmfit/lmfit-py">lmfit-py</a></td></tr>
+                    <tr><td>LocScale</td><td>automated program for local sharpening of cryo-EM maps</td><td>CentOS 7</td><td><a href="https://gitlab.tudelft.nl/aj-lab/locscale">locscale</a></td></tr>
+                    <tr><td>ModelAngelo</td><td>automatic atomic model building program for cryo-EM maps</td><td>CentOS 7</td><td><a href="https://github.com/3dem/model-angelo">model-angelo</a></td></tr>
+                    <tr><td>Modeller</td><td>Comparative Protein Structure Modelling by Satisfaction of Spatial Restraints</td><td>CentOS 7</td><td><a href="https://salilab.org/modeller/10.4/release.html">modeller</a></td></tr>
+                    <tr><td>motioncorr2</td><td>Correction of electron beam-induced sample motion</td><td>openSUSE</td><td><a href="https://emcore.ucsf.edu/ucsf-software">motioncore2</a></td></tr>
+                    <tr><td>napari</td><td>fast, interactive, multi-dimensional image viewer for Python</td><td>CentOS 7</td><td><a href="https://napari.org/dev/release/release_0_4_0.html">napari</a></td></tr>
+                    <tr><td>NFFT</td><td>Nonequispaced fast Fourier transform</td><td>CentOS 7</td><td><a href="https://www-user.tu-chemnitz.de/~potts/nfft/download.php">nfft</a></td></tr>
+                    <tr><td>novaCTF</td><td>3D-CTF correction for electron microscopy</td><td>CentOS 7</td><td><a href="https://github.com/turonova/novaCTF">novaCTF</a></td></tr>
+                    <tr><td>Phenix 1.21</td><td>Python modules and command-line utilities for EM of biological samples</td><td>openSUSE</td><td><a href="https://phenix-online.org/documentation/install-setup-run.html">Phenix home</a></td></tr>
+                    <tr><td>pip 24.3.1</td><td>mamba module</td><td>openSUSE</td><td><a href="https://pip.pypa.io/en/stable/getting-started/">Pip howto</a></td></tr>
+                    <tr><td>pyem</td><td>Python modules and command-line utilities for EM of biological samples</td><td>openSUSE</td><td><a href="https://github.com/asarnow/pyem">pyem</a></td></tr>
+                    <tr><td>python 3.12</td><td>mamba module</td><td>openSUSE</td><td><a href="https://scipy-lectures.org/intro/">Python intro</a></td></tr>        
+                    <tr><td>PDB2PQR</td><td>automates tasks of preparing structures for continuum solvation calculations</td><td>CentOS 7</td><td><a href="https://pdb2pqr.readthedocs.io/en/v3.3.1/">pdb2pqr</a></td></tr>
+                    <tr><td>plotly</td><td>interactive, open-source, and browser-based graphing library for Python</td><td>CentOS 7</td><td><a href="https://pypi.org/project/plotly/">plotly</a></td></tr>
+                    <tr><td>PyMOL</td><td>user-sponsored molecular visualization system</td><td>CentOS 7</td><td><a href="https://www.pymol.org/">pymol</a></td></tr>
+                    <tr><td>PyTOM</td><td>toolbox developed for interpreting cryo electron tomography data</td><td>CentOS 7</td><td><a href="https://github.com/SBC-Utrecht/PyTom">PyTom</a></td></tr>
+                    <tr><td>PyWavelets</td><td>Wavelet Transforms in Python</td><td>CentOS 7</td><td><a href="https://pywavelets.readthedocs.io/en/latest/index.html">pywavelets</a></td></tr>
+                    <tr><td>Qhull</td><td>computes the convex hull, Delaunay triangulation, Voronoi diagram, halfspace intersection</td><td>CentOS 7</td><td><a href="http://www.qhull.org/">qhull</a></td></tr>
+                    <tr><td>relion-blush</td><td>running Blush regularization in RELION-5</td><td>CentOS 7</td><td><a href="https://github.com/3dem/relion-blush">relion-blush</a></td></tr>
+                    <tr><td>relion-classranker</td><td>training and running the model for the class ranking functionality</td><td>CentOS 7</td><td><a href="https://github.com/3dem/relion-classranker">relion-classranker</a></td></tr>
+                    <tr><td>Relion 5</td><td>REgularised LIkelihood OptimisatioN</td><td>openSUSE</td><td><a href="https://relion.readthedocs.io/en/latest/Whats-new.html">Relion Home</a></td></tr>
+                    <tr><td>SAM2</td><td>Segment Anything Model 2</td><td>CentOS 7</td><td><a href="https://arxiv.org/html/2408.00714v1">SAM2</a></td></tr>
+                    <tr><td>ScaLAPACK</td><td>high performance linearalgebra routines for distributed memory computers supporting MPICentOS 7</td><td>CentOS 7</td><td><a href="https://github.com/Reference-ScaLAPACK/scalapack">ScaLAPACK</a></td></tr>
+                    <tr><td>Sidesplitter</td><td>Local SNR Filter for both SIDES of SPLIT refinements</td><td>CentOS 7</td><td><a href="https://github.com/StructuralBiology-ICLMedicine/SIDESPLITTER">SIDESPLITTER</a></td></tr>
+                    <tr><td>Simple</td><td>Single-particle IMage Processing Linux Engine</td><td>CentOS 7</td><td><a href="https://github.com/hael/SIMPLE">SIMPLE</a></td></tr>
+                    <tr><td>Topaz</td><td>pipeline for particle detection in cryo-electron microscopy images using convolutional neural networks</td><td>CentOS 7</td><td><a href="https://github.com/tbepler/topaz">topaz</a></td></tr>
+                    <tr><td>TopHat</td><td>bioinformatic sequence analysis packet tool</td><td>CentOS 7</td><td><a href="https://apolo-docs.readthedocs.io/en/latest/software/applications/topHat/index.html">topHat/</a></td></tr>
+                    <tr><td>Unblur</td><td>align the frames of movies recorded on an electron microscope to reduce image blurrig due to beam-induced motion</td><td>CentOS 7</td><td><a href="https://grigoriefflab.umassmed.edu/unblur_summovie">unblur_summovie</a></td></tr>
+                    <tr><td>VisPy</td><td>interactive scientific visualization in Python</td><td>CentOS 7</td><td><a href="https://github.com/vispy/vispy">vispy</a></td></tr>
+                    <tr><td>VTK</td><td>image processing, 3D graphics, volume rendering and visualization</td><td>CentOS 7</td><td><a href="https://pypi.org/project/vtk/">vtk</a></td></tr>     
+                    <tr><td>WARP/M</td><td>Frame alignment, defocus estimation, particle picking and tomographic reconstruction</td><td>Windows</td><td><a href="https://warpem.github.io/warp/home/warp/">warp home</a></td></tr>
+                </tbody>
+            </table>      
+            <div class="pagination" id="pagination"></div>
+        </div>
+        <div class="buttons">                
+            <button onClick="window.location ='report/report_issue.html' ">Request</button>
+            <button onClick="window.location ='report/report_issue.html' ">Report</button>
+            <button onClick="window.location ='admin/admin.html' ">Admin</button>
+            <hr>
+            <button onclick="togglePagination()" id="togglePagination">Show All</button>
+            <button onclick="printPDF()">Print PDF</button>
+            <button onclick="printCSV()">Print CSV</button>
+            <hr>
+            <button class="sw_button" onClick="window.location ='spa.html' " >SPA</button>
+            <button class="sw_button" onClick="window.location ='tomo.html' ">TOMO</button>
+            <button class="sw_button" onClick="window.location ='lm.html'" >LM</button>
+        </div>
+    </div>
+    <footer>
+        <hr><p>© 2024 by SBU</p>
+    </footer>     
+    <script src="./js/main.js"></script>
+    <script src="./js/printPDF.js"></script>
+    <script src="./js/printCSV.js"></script>     
+</body>
+</html>

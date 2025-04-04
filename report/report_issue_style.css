@@ -1,0 +1,98 @@
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, #5dade2, #7fb3d5, #a2a3c3, #c67d8f, #f4d03f);
+    color: white;
+    font-size: 19px;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header img {
+    width: 90px;
+    height: 90px;
+    margin: 20px 20px 30px 0;
+}
+h1 {
+    letter-spacing: 1.5px;
+    color: #062930;
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+}
+h2 {
+    text-align: center;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+label, input, textarea {
+    height: 20px;
+    margin: 0 20px 20px;
+    display: flex;
+    border-radius: 5px;
+}
+input, textarea {
+    padding: 8px;
+    border: none;
+    font-size: 20px;
+}
+textarea {
+    height: 100px;
+    font-weight: 500;
+}
+input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+input[type="radio"] {
+    appearance: none;
+    cursor: pointer;
+    width: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+}
+input[type="radio"]:checked::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: #ca8489bb;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    background: rgba(184, 22, 22, 0.322);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+button:hover {
+    background: rgba(184, 22, 22, 0.6);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0);
+    transform: translateY(-0.8px);
+}
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    margin: 0 auto;
+}

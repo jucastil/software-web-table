@@ -1,0 +1,267 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+body {
+    background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+    color: white;
+    min-height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+    transform: translateX(-100px);
+    gap: 15px;
+}
+header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+header h1 {
+    margin: 10px;
+    letter-spacing: 3px;
+    font-size: 40px;
+    color: white;
+}
+header:hover h1,
+header:hover img {
+    transform: scale(1.02);
+    transition: all 0.4s ease;
+}
+header:hover h1 {
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+header:hover img {
+    box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.5);
+}
+h1 {
+    color: rgba(255, 255, 255, 0.5);
+}
+h2 {
+    font-size: 18px;
+    font-weight: 400;
+}
+button {
+    font-size: 20px;
+    font-weight: 800;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
+}
+th {
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+}
+th:hover {
+    background: rgba(148, 21, 21, 0.1);
+}
+tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+p {
+    font-size: 15px;
+    margin: 20px;
+}
+hr {
+    margin: 7px 0;
+}
+a {
+    color: rgb(235, 113, 113);
+    font-weight: 800;
+}
+a:hover {
+    color: rgb(245, 43, 43);
+    font-weight: 800;
+}
+.date {
+    color: rgba(50, 50, 50);
+}
+.container_and_buttons {
+    top: 50%;
+    left: 50%;
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    justify-content: center;
+    gap: 0px;
+    width: 80%;
+    margin: 20px auto;
+}
+.container {
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.container_and_buttons .info {
+    color: rgba(255, 255, 255, 0.5);
+}
+.container table {
+    flex-grow: 1;
+    min-height: 700px;
+    table-layout: fixed;
+    width: 100%;
+}
+.container table tr {
+    transition: all 0.3s ease;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.container table tr:hover {
+    text-overflow: clip;
+    overflow: visible;
+    white-space: normal;
+}
+.container table thead {
+    font-size: 18px;
+    color: rgb(32, 32, 32);
+}
+.container table thead:hover {
+    font-size: 20px;
+}
+.buttons {
+    position: relative;
+    margin: 250px 10px 0px 0px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+.buttons button {
+    padding: 10px 20px;
+    height: 40px;
+    width: 130px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+.buttons button:hover {
+    color: rgb(19, 19, 19);
+    opacity: 0.8;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.10);
+    transform: translateY(-0.8px);
+    transition: 0.4s ease;
+}
+.buttons button.active {
+    color: rgb(19, 19, 19);
+    opacity: 0.8;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.10);
+    transform: translateY(-0.8px);
+    transition: 0.4s ease;
+}
+.buttons button:nth-child(1),
+.buttons button:nth-child(2) {
+    background: rgba(255, 140, 0, 0.7);
+}
+.buttons button:nth-child(3) {
+    background: rgba(255, 0, 0, 0.7);
+}
+.buttons button:nth-child(5),
+.buttons button:nth-child(6),
+.buttons button:nth-child(7) {
+    background: rgba(165, 54, 122, 0.7);
+}
+.buttons button:nth-child(9),
+.buttons button:nth-child(10),
+.buttons button:nth-child(11) {
+    background: rgba(0, 255, 157, 0.7);
+}
+.buttons hr {
+    width: 130px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.pagination button {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination .active {
+    background-color: #007bff;
+    border-radius: 50%;
+    color: white;
+}
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    .container {
+        padding: 10px;
+    }
+}
+@media (max-width: 480px) {
+    header {
+        font-size: 18px;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    .container {
+        padding: 5px;
+    }
+}
+footer {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 150px;
+    background-color: #33333353;
+    backdrop-filter: blur(30px);
+    border-top: 1px solid rgba(255, 255, 255, 0.381);
+    text-align: center;
+    opacity: 0.8;
+}
